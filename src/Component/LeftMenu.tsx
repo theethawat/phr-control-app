@@ -4,39 +4,51 @@ class LeftMenu extends Component<any, any> {
         return (
             <div>
                 <aside className="menu">
-                    {/* <p className="menu-label">
+                    <p className="menu-label">
                         General
                     </p>
                     <ul className="menu-list">
-                        <li><a>Dashboard</a></li>
-                        <li><a>Customers</a></li>
-                    </ul> */}
-                    <p className="menu-label">
-                        จัดการตัวชี้วัดข้อมูลสุขภาพ
-                    </p>
-                    <ul className="menu-list">
-                        <li><a>Team Settings</a></li>
-                        <li>
-                            <a className="is-active">เกณฑ์การจำแนกระดับความเสี่ยง</a>
-                            <ul>
-                                <li><a>ความเข้มข้นของออกซิเจนในเลือด</a></li>
-                                <li><a>ความดันโลหิต</a></li>
-                                <li><a>อัตราการเต้นของหัวใจ</a></li>
-                                <li><a>ระดับน้ำตาลในเลือด</a></li>
+                        <li><a>หน้าแรก</a></li>
 
-                            </ul>
-                        </li>
-                        <li><a>Invitations</a></li>
-                        <li><a>Cloud Storage Environment Settings</a></li>
-                        <li><a>Authentication</a></li>
                     </ul>
                     <p className="menu-label">
-                        Transactions
+                        จัดการตัวชี้วัดข้อมูลทางสุขภาพ
                     </p>
                     <ul className="menu-list">
-                        <li><a>Payments</a></li>
-                        <li><a>Transfers</a></li>
-                        <li><a>Balance</a></li>
+                        <li> <a>เกณฑ์การจำแนกระดับความเสี่ยง</a></li>
+                        <li> <a>จัดการโรคที่จะตามมา จากตัวบ่งชี้ทางสุขภาพ</a></li>
+                    </ul>
+                    <p className="menu-label">
+                        จัดการข้อมูลทางสถิติ
+                    </p>
+
+                    <ul className="menu-list">
+                        <li>
+                            <a>จัดการข้อมูลทางสถิติตามตัวชี้วัดทางสุขภาพ</a>
+                            <ul>
+                                <li> <a>ความดันโลหิต</a></li>
+                                <li> <a>ระดับน้ำตาลในเลือด</a></li>
+                                <li> <a>อัตราการเต้นของหัวใจ</a></li>
+                                <li> <a>ระดับออกซิเจนในเลือด</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p className="menu-label">
+                        จัดการคำแนะนำ
+                    </p>
+                    <ul className="menu-list">
+                        <li>
+                            <a>คำแนะนำต่อโรคต่าง ๆ ในกลุ่มโรคไม่ติดต่อเรื้อรัง</a>
+                            <ul>
+                                <li><a>โรคอ้วน</a></li>
+                                <li><a>โรคเบาหวาน</a></li>
+                                <li><a>โรคความดันโลหิตสูง</a></li>
+                                <li><a>โรคออกซิเจนในเลือดต่ำ</a></li>
+                                <li><a>โรคหลอดเลือดสมอง</a></li>
+                                <li><a>โรคหลอดเลือดหัวใจ</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </aside>
             </div>
