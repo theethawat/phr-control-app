@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from "./Component/Header"
 import LeftMenu from "./Component/LeftMenu"
+import MainUI from "./Component/UIHandling"
 import "bulma/css/bulma.min.css"
 import "./index.css"
 import './PhrApp.css';
@@ -17,7 +18,7 @@ class App extends Component {
               <LeftMenu />
             </div>
             <div className="column is-9">
-
+              <MainUI />
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ class RiskLevelUI extends Component<any> {
     render() {
         return (
             <div>
-                <h1 className="title is-4"> Index Page </h1>
+                <h1 className="title is-4"> Risk Level Page </h1>
             </div>
         )
     }

@@ -18,7 +18,7 @@ class UIHandling extends Component<any, IUserInterfaceChoice> {
         }
     }
 
-    renderUI(requestUI: UICategory) {
+    renderUI(requestUI?: UICategory) {
         let shouldShow
         switch (requestUI) {
             case UICategory.AdviceDisease: shouldShow = <AdviceDiseaseUI />
@@ -47,3 +47,4 @@ class UIHandling extends Component<any, IUserInterfaceChoice> {
         )
     }
 }
+export default UIHandling

@@ -3,7 +3,7 @@ class AdviceDiseaseUI extends Component<any> {
     render() {
         return (
             <div>
-                <h1 className="title is-4"> Index Page </h1>
+                <h1 className="title is-4"> Advice Disease</h1>
             </div>
         )
     }
