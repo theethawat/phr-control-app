@@ -3,5 +3,6 @@ export enum UICategory {
   DiseaseSource,
   VitalSignStat,
   AdviceVitalSign,
-  AdviceDisease
+  AdviceDisease,
+  Default
 }

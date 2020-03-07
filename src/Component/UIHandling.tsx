@@ -31,6 +31,8 @@ class UIHandling extends Component<any, IUserInterfaceChoice> {
                 break;
             case UICategory.VitalSignStat: shouldShow = <VitalSignStatUI />
                 break;
+            case UICategory.Default: shouldShow = <DefaultUI />
+                break;
             default: shouldShow = <DefaultUI />
                 break;
         }
@@ -38,7 +40,7 @@ class UIHandling extends Component<any, IUserInterfaceChoice> {
     }
 
     render() {
-        let mustHandlingUI: UICategory = this.state.category
+        let mustHandlingUI: UICategory = this.props.category
         var showingUI = this.renderUI(mustHandlingUI)
         return (
             <div>
