@@ -1,5 +1,16 @@
 import React, { Component } from "react"
+import { UICategory } from "../Utility/UICategory"
+import { Disease } from "../Utility/Disease"
+import { VitalSignDataType } from "../Utility/VitalSignDataType"
 class LeftMenu extends Component<any, any> {
+    constructor(props: any) {
+        super(props)
+    }
+
+    handleMenu(category: UICategory, disease?: Disease, dataType?: VitalSignDataType): void {
+        this.props.setHandleUI(category, disease, dataType)
+    }
+
     render() {
         return (
             <div>
@@ -15,7 +26,7 @@ class LeftMenu extends Component<any, any> {
                         จัดการตัวชี้วัดข้อมูลทางสุขภาพ
                     </p>
                     <ul className="menu-list">
-                        <li> <a>เกณฑ์การจำแนกระดับความเสี่ยง</a></li>
+                        <li > <a onClick={() => this.handleMenu(UICategory.RiskLevel)}>เกณฑ์การจำแนกระดับความเสี่ยง</a></li>
                         <li> <a>จัดการโรคที่จะตามมา จากตัวบ่งชี้ทางสุขภาพ</a></li>
                     </ul>
                     <p className="menu-label">
