@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from "./Component/Header"
-import LeftMenu from "./Component/LeftMenu"
 import MainUI from "./Component/UIHandling"
 import "bulma/css/bulma.min.css"
 import "./index.css"
@@ -19,7 +18,9 @@ class App extends Component<any, IUserInterfaceChoice> {
       selectDataType: VitalSignDataType.Unknown,
       selectDisease: Disease.Unknown
     }
+
   }
+
 
   setHandleUI(category: UICategory, disease?: Disease, dataType?: VitalSignDataType): any {
     this.setState({
@@ -75,12 +76,12 @@ class App extends Component<any, IUserInterfaceChoice> {
                     <li>
                       <a>คำแนะนำต่อโรคต่าง ๆ ในกลุ่มโรคไม่ติดต่อเรื้อรัง</a>
                       <ul>
-                        <li><a>โรคอ้วน</a></li>
-                        <li><a>โรคเบาหวาน</a></li>
-                        <li><a>โรคความดันโลหิตสูง</a></li>
-                        <li><a>โรคออกซิเจนในเลือดต่ำ</a></li>
-                        <li><a>โรคหลอดเลือดสมอง</a></li>
-                        <li><a>โรคหลอดเลือดหัวใจ</a></li>
+                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Obesity)} >โรคอ้วน</a></li>
+                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Diabetes)}>โรคเบาหวาน</a></li>
+                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Hypertension)}>โรคความดันโลหิตสูง</a></li>
+                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Hypoxia)}>โรคออกซิเจนในเลือดต่ำ</a></li>
+                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Stroke)}>โรคหลอดเลือดสมอง</a></li>
+                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Coronary)}>โรคหลอดเลือดหัวใจ</a></li>
                       </ul>
                     </li>
 
