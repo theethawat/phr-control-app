@@ -5,8 +5,8 @@ class Header extends Component<any, any> {
             <div>
                 <nav className="navbar" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
-                        <a className="navbar-item" href="https://bulma.io">
-                            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+                        <a className="navbar-item" href="#">
+                            <h1 className="title is-5">Personal Health Connect DB Manager</h1>
                         </a>
 
                         <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -17,7 +17,7 @@ class Header extends Component<any, any> {
                     </div>
 
                     <div id="navbarBasicExample" className="navbar-menu">
-                        <div className="navbar-start">
+                        {/* <div className="navbar-start">
                             <a className="navbar-item">
                                 Home
                             </a>
@@ -47,7 +47,7 @@ class Header extends Component<any, any> {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className="navbar-end">
                             <div className="navbar-item">
@@ -65,7 +65,7 @@ class Header extends Component<any, any> {
                 </nav>
                 <section className="hero is-info">
                     <div className="hero-body">
-                        <div className="container">
+                        <div className="container acenter">
                             <h1 className="title">
                                 Personal Health Connect Application Database Management      </h1>
                             <h2 className="subtitle">
