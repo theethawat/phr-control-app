@@ -3,7 +3,7 @@ class DefaultUI extends Component<any> {
     render() {
         return (
             <div>
-                <h1 className="title is-4"> Index Page </h1>
+                <h4> Index Page </h4>
             </div>
         )
     }

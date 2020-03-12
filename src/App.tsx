@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./Component/Header"
 import MainUI from "./Component/UIHandling"
-import "bulma/css/bulma.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css"
 import './PhrApp.css';
 import { UICategory } from './Utility/UICategory';
@@ -18,7 +18,6 @@ class App extends Component<any, IUserInterfaceChoice> {
       selectDataType: VitalSignDataType.Unknown,
       selectDisease: Disease.Unknown
     }
-
   }
 
 
@@ -36,62 +35,30 @@ class App extends Component<any, IUserInterfaceChoice> {
       <div>
         <Header />
         <div className="container">
-          <div className="columns">
-            <div className="column is-3">
-              <div>
-                <aside className="menu">
-                  <p className="menu-label">
-                    General
-                    </p>
-                  <ul className="menu-list">
-                    <li><a onClick={() => this.setHandleUI(UICategory.Default)}>หน้าแรก</a></li>
+          <div className="row">
+            <div className="col-sm-3">
+              <h5>เมนูทั่วไป</h5>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-action"><a onClick={() => this.setHandleUI(UICategory.Default)}>หน้าแรก</a></li>
+                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.RiskLevel)}>เกณฑ์การจำแนกระดับความเสี่ยง</a></li>
+                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.DiseaseSource)}>จัดการโรคที่จะตามมา จากตัวบ่งชี้ทางสุขภาพ</a></li>
+              </ul>
+              <br />
+              <h5>แก้ไขสถิติข้อมูลแต่ละหัวข้อ</h5>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-action s"> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.BloodPressure)} >ความดันโลหิต</a></li>
+                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.Glucose)}>ระดับน้ำตาลในเลือด</a></li>
+                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.HeartRate)}>อัตราการเต้นของหัวใจ</a></li>
+                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.Spo2)}>ระดับออกซิเจนในเลือด</a></li>
+              </ul>
 
-                  </ul>
-                  <p className="menu-label">
-                    จัดการตัวชี้วัดข้อมูลทางสุขภาพ
-                    </p>
-                  <ul className="menu-list">
-                    <li > <a onClick={() => this.setHandleUI(UICategory.RiskLevel)}>เกณฑ์การจำแนกระดับความเสี่ยง</a></li>
-                    <li> <a onClick={() => this.setHandleUI(UICategory.DiseaseSource)}>จัดการโรคที่จะตามมา จากตัวบ่งชี้ทางสุขภาพ</a></li>
-                  </ul>
-                  <p className="menu-label">
-                    จัดการข้อมูลทางสถิติ
-                    </p>
-
-                  <ul className="menu-list">
-                    <li>
-                      <a>จัดการข้อมูลทางสถิติตามตัวชี้วัดทางสุขภาพ</a>
-                      <ul>
-                        <li> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.BloodPressure)} >ความดันโลหิต</a></li>
-                        <li> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.Glucose)}>ระดับน้ำตาลในเลือด</a></li>
-                        <li> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.HeartRate)}>อัตราการเต้นของหัวใจ</a></li>
-                        <li> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.Spo2)}>ระดับออกซิเจนในเลือด</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <p className="menu-label">
-                    จัดการคำแนะนำ
-                    </p>
-                  <ul className="menu-list">
-                    <li>
-                      <a>คำแนะนำต่อโรคต่าง ๆ ในกลุ่มโรคไม่ติดต่อเรื้อรัง</a>
-                      <ul>
-                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Obesity)} >โรคอ้วน</a></li>
-                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Diabetes)}>โรคเบาหวาน</a></li>
-                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Hypertension)}>โรคความดันโลหิตสูง</a></li>
-                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Hypoxia)}>โรคออกซิเจนในเลือดต่ำ</a></li>
-                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Stroke)}>โรคหลอดเลือดสมอง</a></li>
-                        <li><a onClick={() => this.setHandleUI(UICategory.AdviceDisease, Disease.Coronary)}>โรคหลอดเลือดหัวใจ</a></li>
-                      </ul>
-                    </li>
-
-                  </ul>
-                </aside>
-              </div>
             </div>
-            <div className="column is-9">
+
+
+            <div className="col-sm-9">
               {uiComponent}
             </div>
+
           </div>
         </div>
       </div>

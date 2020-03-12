@@ -3,7 +3,7 @@ class AdviceVitalSignUI extends Component<any> {
     render() {
         return (
             <div>
-                <h1 className="title is-4">   Advice VitalSign Page </h1>
+                <h4>   Advice VitalSign Page </h4>
             </div>
         )
     }

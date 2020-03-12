@@ -29,8 +29,6 @@ class UIHandling extends Component<any, IUserInterfaceChoice> {
                 break;
             case UICategory.RiskLevel: shouldShow = <RiskLevelUI />
                 break;
-            case UICategory.VitalSignStat: shouldShow = <VitalSignStatUI />
-                break;
             case UICategory.Default: shouldShow = <DefaultUI />
                 break;
             default: shouldShow = <DefaultUI />
