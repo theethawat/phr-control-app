@@ -12,6 +12,7 @@ class VitalsignRiskForm extends Component<any, any> {
             riskData: currentRisk,
         }
         this.keyStageValue = this.keyStageValue.bind(this)
+        this.prepareDatabaseUpdate = this.prepareDatabaseUpdate.bind(this)
     }
 
     keyStageValue(event: any) {
@@ -29,6 +30,10 @@ class VitalsignRiskForm extends Component<any, any> {
         console.log(vitalSignRiskDataCopy)
     }
 
+    prepareDatabaseUpdate(event: any) {
+        event.preventDefault()
+    }
+
     render() {
         let dataTypeRef: string = this.state.name
         let dataTypeThaiName: any = vitalSignMap.get(this.state.name)
@@ -37,7 +42,7 @@ class VitalsignRiskForm extends Component<any, any> {
             <div>
                 <div className="card">
                     <div className="card-body">
-                        <form>
+                        <form onSubmit={this.prepareDatabaseUpdate}>
                             <h5>{dataTypeThaiName}</h5>
                             <label>ค่าที่อยู่ในระดับปลอดภัย</label>
                             <div className="row">
