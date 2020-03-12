@@ -11,9 +11,9 @@ let unit: Array<string> = ["mmHG", "mmHG", "kg/dL", "%", "bpm"]
 class RiskLevelUI extends Component<any, any> {
     constructor(props: any) {
         super(props)
-        let riskArrayTemplate: RiskTemplate[] = []
+
         this.state = {
-            riskLevel: riskArrayTemplate
+            riskLevel: []
         }
     }
 

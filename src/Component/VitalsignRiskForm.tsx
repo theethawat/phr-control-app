@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import RiskTemplate from "../UserInterface/HealthRisk/RiskTemplate";
-import vitalSignNameMap from "../Utility/VitalSignNameMap"
 import vitalSignMap from "../Utility/VitalSignNameMap";
-import { InputFormRiskRef } from "../Utility/InputFormRiskRef";
-import { eventNames } from "cluster";
+
 class VitalsignRiskForm extends Component<any, any> {
     constructor(props: any) {
         super(props)
@@ -12,18 +10,23 @@ class VitalsignRiskForm extends Component<any, any> {
         this.state = {
             name: vitalSignName,
             riskData: currentRisk,
-            dangerMin: '',
-            dangerMax: '',
-            riskMin: '',
-            riskMax: '',
-            safeMin: '',
-            safeMax: ''
         }
-        // this.keyStageValue = this.keyStageValue.bind(this)
+        this.keyStageValue = this.keyStageValue.bind(this)
     }
 
-    keyStageValue(riskRef: InputFormRiskRef, event: any) {
-        console.log(event)
+    keyStageValue(event: any) {
+        let target = event.target
+        let vitalSignRiskDataCopy: RiskTemplate = this.state.riskData
+        vitalSignRiskDataCopy.risk.min = target.name === "risk-min" ? target.value : vitalSignRiskDataCopy.risk.min
+        vitalSignRiskDataCopy.risk.max = target.name === "risk-max" ? target.value : vitalSignRiskDataCopy.risk.max
+        vitalSignRiskDataCopy.danger.min = target.value === "danger-min" ? target.value : vitalSignRiskDataCopy.danger.min
+        vitalSignRiskDataCopy.danger.max = target.name === "danger-max" ? target.value : vitalSignRiskDataCopy.danger.max
+        vitalSignRiskDataCopy.safe.min = target.name === "safe-min" ? target.value : vitalSignRiskDataCopy.safe.min
+        vitalSignRiskDataCopy.safe.max = target.name === "safe-max" ? target.value : vitalSignRiskDataCopy.safe.max
+        this.setState({
+            riskData: vitalSignRiskDataCopy
+        })
+        console.log(vitalSignRiskDataCopy)
     }
 
     render() {
@@ -39,35 +42,37 @@ class VitalsignRiskForm extends Component<any, any> {
                             <label>ค่าที่อยู่ในระดับปลอดภัย</label>
                             <div className="row">
                                 <div className="col">
-                                    <input type="text" className="form-control" name="safe-min" value={data.safe.min} >  </input> </div>
+                                    <input type="text" onChange={this.keyStageValue} className="form-control" name="safe-min" value={data.safe.min} />  </div>
                                 <div className="col">
                                     <p> ถึง </p>
                                 </div>
                                 <div className="col">
-                                    <input type="text" className="form-control" name="safe-max" value={data.safe.max} >  </input> </div>
+                                    <input type="text" onChange={this.keyStageValue} className="form-control" name="safe-max" value={data.safe.max} /> </div>
                             </div>
                             <hr />
                             <label>ค่าที่อยู่ในระดับเสี่ยง</label>
                             <div className="row">
                                 <div className="col">
-                                    <input type="text" className="form-control" name="risk-min" value={data.risk.min} >  </input>                           </div>
+                                    <input type="text" onChange={this.keyStageValue} className="form-control" name="risk-min" value={data.risk.min} />
+                                </div>
                                 <div className="col">
                                     <p> ถึง </p>
                                 </div>
                                 <div className="col">
-                                    <input type="text" className="form-control" name="risk-max" value={data.risk.max} >  </input>                           </div>
+                                    <input type="text" onChange={this.keyStageValue} className="form-control" name="risk-max" value={data.risk.max} />
+                                </div>
                             </div>
                             <hr />
                             <label>ค่าที่อยู่ในระดับอันตราย</label>
                             <div className="row">
                                 <div className="col">
-                                    <input type="text" className="form-control" name="danger-min" value={data.danger.min}> </input>
+                                    <input type="text" onChange={this.keyStageValue} className="form-control" name="danger-min" value={data.danger.min} />
                                 </div>
                                 <div className="col">
                                     <p> ถึง </p>
                                 </div>
                                 <div className="col">
-                                    <input type="text" className="form-control" name="danger-max" value={data.danger.max}> </input>
+                                    <input type="text" onChange={this.keyStageValue} className="form-control" name="danger-max" value={data.danger.max} />
                                 </div>
                             </div>
                             <hr />
