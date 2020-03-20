@@ -29,17 +29,6 @@ class VitalsignRiskForm extends Component<any, any> {
         console.log(vitalSignRiskDataCopy)
     }
 
-    prepareDatabaseUpdate(event: any) {
-        event.preventDefault()
-        let inputDBRisk = this.state.riskData
-        let db = MyFirebase.firestore().collection("vitalsign_analyze")
-        let docRef = db.doc(inputDBRisk)
-        docRef.update({
-            // Setting FIrebase Update Command
-
-        })
-    }
-
     render() {
         let dataTypeRef: string = this.state.name
         let dataTypeThaiName: any = vitalSignMap.get(this.state.name)
