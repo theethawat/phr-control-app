@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from "./Component/Header"
+import Footer from './Component/Footer';
 import MainUI from "./Component/UIHandling"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css"
@@ -38,28 +39,29 @@ class App extends Component<any, IUserInterfaceChoice> {
           <div className="row">
             <div className="col-sm-3">
               <h5>เมนูทั่วไป</h5>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item list-group-item-action"><a onClick={() => this.setHandleUI(UICategory.Default)}>หน้าแรก</a></li>
-                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.RiskLevel)}>เกณฑ์การจำแนกระดับความเสี่ยง</a></li>
-                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.DiseaseSource)}>จัดการโรคที่จะตามมา จากตัวบ่งชี้ทางสุขภาพ</a></li>
+              <ul className="nav flex-column">
+                <li className="nav-item"><a href="#" className="nav-link" onClick={() => this.setHandleUI(UICategory.Default)}>หน้าแรก</a></li>
+                <li className="nav-item"> <a href="#" className="nav-link" onClick={() => this.setHandleUI(UICategory.RiskLevel)}>เกณฑ์การจำแนกระดับความเสี่ยง</a></li>
+                <li className="nav-item"> <a href="#" className="nav-link" onClick={() => this.setHandleUI(UICategory.DiseaseSource)}>จัดการโรคที่จะตามมา จากตัวบ่งชี้ทางสุขภาพ</a></li>
               </ul>
               <br />
               <h5>แก้ไขสถิติข้อมูลแต่ละหัวข้อ</h5>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item list-group-item-action s"> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.BloodPressure)} >ความดันโลหิต</a></li>
-                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.Glucose)}>ระดับน้ำตาลในเลือด</a></li>
-                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.HeartRate)}>อัตราการเต้นของหัวใจ</a></li>
-                <li className="list-group-item list-group-item-action"> <a onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.Spo2)}>ระดับออกซิเจนในเลือด</a></li>
+              <ul className="nav flex-column">
+                <li className="nav-item"> <a href="#" className="nav-link" onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.BloodPressure)} >ความดันโลหิต</a></li>
+                <li className="nav-item"> <a href="#" className="nav-link" onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.Glucose)}>ระดับน้ำตาลในเลือด</a></li>
+                <li className="nav-item"> <a href="#" className="nav-link" onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.HeartRate)}>อัตราการเต้นของหัวใจ</a></li>
+                <li className="nav-item"> <a href="#" className="nav-link" onClick={() => this.setHandleUI(UICategory.VitalSignStat, undefined, VitalSignDataType.Spo2)}>ระดับออกซิเจนในเลือด</a></li>
               </ul>
 
             </div>
 
 
-            <div className="col-sm-9">
+            <div className="col-sm-9" >
               {uiComponent}
             </div>
 
           </div>
+          <Footer />
         </div>
       </div>
     )
