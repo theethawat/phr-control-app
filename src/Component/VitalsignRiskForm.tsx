@@ -38,7 +38,6 @@ class VitalsignRiskForm extends Component<any, any> {
             // Setting FIrebase Update Command
 
         })
-
     }
 
     render() {
