@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import RiskTemplate from "../UserInterface/HealthRisk/RiskTemplate";
 import vitalSignMap from "../Utility/VitalSignNameMap";
-import MyFirebase from "../Firebase"
+
 class VitalsignRiskForm extends Component<any, any> {
     constructor(props: any) {
         super(props)
@@ -29,6 +29,13 @@ class VitalsignRiskForm extends Component<any, any> {
         console.log(vitalSignRiskDataCopy)
     }
 
+<<<<<<< HEAD
+=======
+    prepareDatabaseUpdate(event: any) {
+        event.preventDefault()
+    }
+
+>>>>>>> parent of 05dac42... Stisla UI Kit
     render() {
         let dataTypeRef: string = this.state.name
         let dataTypeThaiName: any = vitalSignMap.get(this.state.name)
