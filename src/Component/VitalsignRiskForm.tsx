@@ -12,7 +12,6 @@ class VitalsignRiskForm extends Component<any, any> {
             riskData: currentRisk,
         }
         this.keyStageValue = this.keyStageValue.bind(this)
-        this.prepareDatabaseUpdate = this.prepareDatabaseUpdate.bind(this)
     }
 
     keyStageValue(event: any) {
@@ -36,8 +35,8 @@ class VitalsignRiskForm extends Component<any, any> {
         let db = MyFirebase.firestore().collection("vitalsign_analyze")
         let docRef = db.doc(inputDBRisk)
         docRef.update({
-          // Setting FIrebase Update Command
-          
+            // Setting FIrebase Update Command
+
         })
 
     }
@@ -50,7 +49,7 @@ class VitalsignRiskForm extends Component<any, any> {
             <div>
                 <div className="card">
                     <div className="card-body">
-                        <form onSubmit={this.prepareDatabaseUpdate}>
+                        <form>
                             <h5>{dataTypeThaiName}</h5>
                             <label>ค่าที่อยู่ในระดับปลอดภัย</label>
                             <div className="row">
