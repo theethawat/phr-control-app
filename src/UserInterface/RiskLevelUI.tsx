@@ -39,10 +39,6 @@ class RiskLevelUI extends Component<any, any> {
     }
 
 
-    saveNewValueToDatabase(dataType: string) {
-
-    }
-
     render() {
         let riskLevelData: RiskTemplate[] = this.state.riskLevel
         let i = 0

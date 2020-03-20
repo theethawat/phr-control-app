@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import RiskTemplate from "../UserInterface/HealthRisk/RiskTemplate";
 import vitalSignMap from "../Utility/VitalSignNameMap";
-
+import MyFirebase from "../Firebase"
 class VitalsignRiskForm extends Component<any, any> {
     constructor(props: any) {
         super(props)
@@ -32,6 +32,14 @@ class VitalsignRiskForm extends Component<any, any> {
 
     prepareDatabaseUpdate(event: any) {
         event.preventDefault()
+        let inputDBRisk = this.state.riskData
+        let db = MyFirebase.firestore().collection("vitalsign_analyze")
+        let docRef = db.doc(inputDBRisk)
+        docRef.update({
+          // Setting FIrebase Update Command
+          
+        })
+
     }
 
     render() {
