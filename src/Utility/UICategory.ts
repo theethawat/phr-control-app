@@ -4,5 +4,6 @@ export enum UICategory {
   VitalSignStat,
   AdviceVitalSign,
   AdviceDisease,
-  Default
+  Default,
+  NotLogin
 }

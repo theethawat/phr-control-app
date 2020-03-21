@@ -19,6 +19,7 @@ class AdviceVitalSignUI extends Component<any, any> {
       adviceSafe: ""
     }
     this.renderNewAdvice = this.renderNewAdvice.bind(this)
+    this.prepareSubmitingNewAdvice = this.prepareSubmitingNewAdvice.bind(this)
   }
 
   componentWillReceiveProps(nextProps: any) {
@@ -76,6 +77,26 @@ class AdviceVitalSignUI extends Component<any, any> {
     })
   }
 
+  prepareSubmitingNewAdvice() {
+    let dataType = this.state.dataTypeName
+    let adviceDanger = this.state.adviceDanger
+    let adviceRisk = this.state.adviceRisk
+    let adviceSafe = this.state.adviceSafe
+    db.collection("vitalsign_advice")
+      .doc(dataType)
+      .update({
+        advice_danger: adviceDanger,
+        advice_risk: adviceRisk,
+        advice_safe: adviceSafe
+      })
+      .then(message => {
+        window.alert("Success Updating" + message)
+      })
+      .catch(err => {
+        window.alert("Error Found " + err)
+      })
+  }
+
   render() {
     return (
       <div>
@@ -108,7 +129,10 @@ class AdviceVitalSignUI extends Component<any, any> {
             value={this.state.adviceDanger}
           ></textarea>
           <br />
-          <button className="btn btn-primary" type="submit">
+          <button
+            className="btn btn-primary"
+            onClick={this.prepareSubmitingNewAdvice}
+          >
             Update
           </button>
         </form>

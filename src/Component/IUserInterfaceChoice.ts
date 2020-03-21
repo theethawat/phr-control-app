@@ -5,4 +5,6 @@ export default interface IUserInterfaceChoice {
   category: UICategory
   selectDisease?: Disease
   selectDataType?: VitalSignDataType
+  login: boolean
+  loginUserName: string
 }
