@@ -43,7 +43,7 @@ class NoLoginUI extends Component<any, any> {
   render() {
     return (
       <div>
-        <h4> Login </h4>
+        <h4 className="kanit"> Login </h4>
         <hr />
         <p>ท่านยังไม่ได้ลงชื่อเก่าใช้ โปรดลงชื่อเข้าใช้ก่อนใช้งานครับ</p>
         <form>

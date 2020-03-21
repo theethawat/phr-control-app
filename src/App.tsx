@@ -82,7 +82,11 @@ class App extends Component<any, IUserInterfaceChoice> {
   render() {
     let loginHeadingStatus
     if (this.state.login == false) {
-      loginHeadingStatus = <button className="btn btn-light">Log in</button>
+      loginHeadingStatus = (
+        <a href="#MainUI">
+          <button className="btn btn-light">Log in</button>
+        </a>
+      )
     } else {
       loginHeadingStatus = (
         <div>
@@ -126,7 +130,7 @@ class App extends Component<any, IUserInterfaceChoice> {
             role="navigation"
             aria-label="main navigation"
           >
-            <div className="navbar-brand">PHR DB Manager</div>
+            <div className="navbar-brand kanit">PHR DB Manager</div>
 
             <div
               className="collapse navbar-collapse"
@@ -139,14 +143,16 @@ class App extends Component<any, IUserInterfaceChoice> {
 
           <div className="acenter jumbotron jumbotron-fluid">
             <br />
-            <h3>ระบบจัดการข้อมูลในแอพพลิเคชั่น Personal Health Connect</h3>
+            <h3 className="kanit">
+              ระบบจัดการข้อมูลในแอพพลิเคชั่น Personal Health Connect
+            </h3>
             <br />
           </div>
         </div>{" "}
         <div className="container">
           <div className="row">
             <div className="col-sm-3">
-              <h5>เมนูทั่วไป</h5>
+              <h5 className="kanit">เมนูทั่วไป</h5>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a
@@ -179,7 +185,7 @@ class App extends Component<any, IUserInterfaceChoice> {
                 </li>
               </ul>
               <br />
-              <h5>คำแนะนำ</h5>
+              <h5 className="kanit">คำแนะนำ</h5>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   {" "}
@@ -248,7 +254,9 @@ class App extends Component<any, IUserInterfaceChoice> {
               </ul>
             </div>
 
-            <div className="col-sm-9">{uiComponent}</div>
+            <div className="col-sm-9" id="MainUI">
+              {uiComponent}
+            </div>
           </div>
           <Footer />
         </div>

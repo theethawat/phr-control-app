@@ -100,7 +100,7 @@ class AdviceVitalSignUI extends Component<any, any> {
   render() {
     return (
       <div>
-        <h4> การให้คำแนะนำเกี่ยวกับข้อมูลสุขภาพ </h4>
+        <h4 className="kanit"> การให้คำแนะนำเกี่ยวกับข้อมูลสุขภาพ </h4>
         <hr />
         <h5>ข้อมูลสุขภาพ {this.state.dataTypeName} </h5>
         <form>

@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit&display=swap");
 .acenter {
   text-align: center;
+}
+.kanit {
+  font-family: "kanit", sans-serif;
 }
 .piccenter {
   display: block;
