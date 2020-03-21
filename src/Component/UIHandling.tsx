@@ -7,6 +7,8 @@ import DiseaseSource from "../UserInterface/DiseaseSourceUI";
 import RiskLevelUI from "../UserInterface/RiskLevelUI";
 import VitalSignStatUI from "../UserInterface/VitalSignStatUI";
 import DefaultUI from "../UserInterface/DefaultUI";
+import { VitalSignDataType } from "../Utility/VitalSignDataType";
+import { isNullOrUndefined } from "util";
 
 class UIHandling extends Component<any, IUserInterfaceChoice> {
     constructor(props: any) {
@@ -16,14 +18,19 @@ class UIHandling extends Component<any, IUserInterfaceChoice> {
             selectDataType: this.props.selectDataType,
             selectDisease: this.props.selectDisease
         }
+        console.log("UI Handling Working")
+        console.log(this.state.selectDataType)
     }
 
-    renderUI(requestUI?: UICategory) {
+
+    renderUI(requestUI?: UICategory, dataType?: VitalSignDataType) {
+        console.log("At UI Handling RenderUI")
+        console.log(dataType)
         let shouldShow
         switch (requestUI) {
             case UICategory.AdviceDisease: shouldShow = <AdviceDiseaseUI />
                 break;
-            case UICategory.AdviceVitalSign: shouldShow = <AdviceVitalSignUI />
+            case UICategory.AdviceVitalSign: shouldShow = <AdviceVitalSignUI selectDataType={dataType} />
                 break;
             case UICategory.DiseaseSource: shouldShow = <DiseaseSource />
                 break;
@@ -39,7 +46,8 @@ class UIHandling extends Component<any, IUserInterfaceChoice> {
 
     render() {
         let mustHandlingUI: UICategory = this.props.category
-        var showingUI = this.renderUI(mustHandlingUI)
+        let mustHandlingDataType: VitalSignDataType = isNullOrUndefined(this.props.selectDataType) ? VitalSignDataType.Unknown : this.props.selectDataType
+        var showingUI = this.renderUI(mustHandlingUI, mustHandlingDataType)
         return (
             <div>
                 {showingUI}

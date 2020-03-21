@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MyFirebase from "../Firebase"
-import RiskTemplate from "./HealthRisk/RiskTemplate";
+import RiskTemplate from "../Utility/HealthRisk/RiskTemplate";
 import VitalsignRiskForm from "../Component/VitalsignRiskForm";
 let db = MyFirebase.firestore()
 let ref = db.collection("vitalsign_analyze")
@@ -39,9 +39,6 @@ class RiskLevelUI extends Component<any, any> {
     }
 
 
-    saveNewValueToDatabase(dataType: string) {
-
-    }
 
     render() {
         let riskLevelData: RiskTemplate[] = this.state.riskLevel

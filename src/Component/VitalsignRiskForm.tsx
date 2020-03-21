@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import RiskTemplate from "../UserInterface/HealthRisk/RiskTemplate";
+import RiskTemplate from "../Utility/HealthRisk/RiskTemplate";
 import vitalSignMap from "../Utility/VitalSignNameMap";
 import firebase from "../Firebase"
 let db = firebase.firestore()
@@ -12,19 +12,21 @@ class VitalsignRiskForm extends Component<any, any> {
             name: vitalSignName,
             riskData: currentRisk,
         }
-        this.keyStageValue = this.keyStageValue.bind(this)
         this.prepareDatabaseUpdate = this.prepareDatabaseUpdate.bind(this)
+        this.keyStageValue = this.keyStageValue.bind(this)
     }
 
     keyStageValue(event: any) {
         let target = event.target
+
         let vitalSignRiskDataCopy: RiskTemplate = this.state.riskData
-        vitalSignRiskDataCopy.risk.min = target.name === "risk-min" ? (+target.value) : vitalSignRiskDataCopy.risk.min
-        vitalSignRiskDataCopy.risk.max = target.name === "risk-max" ? (+target.value) : vitalSignRiskDataCopy.risk.max
-        vitalSignRiskDataCopy.danger.min = target.value === "danger-min" ? (+target.value) : vitalSignRiskDataCopy.danger.min
-        vitalSignRiskDataCopy.danger.max = target.name === "danger-max" ? (+target.value) : vitalSignRiskDataCopy.danger.max
-        vitalSignRiskDataCopy.safe.min = target.name === "safe-min" ? (+target.value) : vitalSignRiskDataCopy.safe.min
-        vitalSignRiskDataCopy.safe.max = target.name === "safe-max" ? (+target.value) : vitalSignRiskDataCopy.safe.max
+        vitalSignRiskDataCopy.risk.min = target.name == "risk-min" ? (+target.value) : vitalSignRiskDataCopy.risk.min
+        vitalSignRiskDataCopy.risk.max = target.name == "risk-max" ? (+target.value) : vitalSignRiskDataCopy.risk.max
+        vitalSignRiskDataCopy.danger.min = target.value == "danger-min" ? (+target.value) : vitalSignRiskDataCopy.danger.min
+        vitalSignRiskDataCopy.danger.max = target.name == "danger-max" ? (+target.value) : vitalSignRiskDataCopy.danger.max
+        vitalSignRiskDataCopy.safe.min = target.name == "safe-min" ? (+target.value) : vitalSignRiskDataCopy.safe.min
+        vitalSignRiskDataCopy.safe.max = target.name == "safe-max" ? (+target.value) : vitalSignRiskDataCopy.safe.max
+
         this.setState({
             riskData: vitalSignRiskDataCopy
         })
